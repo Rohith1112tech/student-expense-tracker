@@ -1,0 +1,17 @@
+sequenceDiagram
+    actor Student
+    participant CLI as main.py
+    participant V as Validation
+    participant T as TransactionService
+    participant S as JsonStorage
+
+    Student->>CLI: Select Add Expense
+    CLI->>V: Validate description/amount/date
+    V-->>CLI: Valid input
+    CLI->>T: add_transaction(...)
+    T->>S: load()
+    S-->>T: Existing data
+    T->>S: save(updated data)
+    S-->>T: Saved
+    T-->>CLI: Transaction created
+    CLI-->>Student: Success message

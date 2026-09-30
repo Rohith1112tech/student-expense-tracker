@@ -1,0 +1,15 @@
+Sample terminal output
+
+============================================================
+        STUDENT EXPENSE TRACKER & BUDGET ANALYZER
+============================================================
+1. Add Income
+2. Add Expense
+3. View Transactions
+4. Delete Transaction
+5. Set Monthly Budget
+6. View Budget Status
+7. Category Analysis
+8. Monthly Report
+9. Export Report
+0. Exit

@@ -1,0 +1,21 @@
+flowchart TD
+    A([Start]) --> B[Launch main.py]
+    B --> C{Select Menu Option}
+    C -->|Add Income/Expense| D[Validate Input]
+    D --> E{Valid?}
+    E -->|No| F[Show Error]
+    F --> C
+    E -->|Yes| G[Create Transaction]
+    G --> H[Save JSON]
+    H --> C
+    C -->|Budget| I[Enter Month and Budget]
+    I --> J[Validate and Save Budget]
+    J --> C
+    C -->|Analytics| K[Read Transactions]
+    K --> L[Group Expenses by Category]
+    L --> M[Display Analysis]
+    M --> C
+    C -->|Report| N[Calculate Monthly Totals]
+    N --> O[Generate Report]
+    O --> C
+    C -->|Exit| P([End])

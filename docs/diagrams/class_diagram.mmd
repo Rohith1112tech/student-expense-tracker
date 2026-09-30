@@ -1,0 +1,43 @@
+classDiagram
+    class Transaction {
+        +id: str
+        +type: str
+        +description: str
+        +amount: float
+        +category: str
+        +date: str
+        +to_dict()
+    }
+
+    class JsonStorage {
+        +load()
+        +save(data)
+    }
+
+    class TransactionService {
+        +add_transaction()
+        +list_transactions()
+        +delete_transaction()
+        +totals()
+    }
+
+    class BudgetService {
+        +set_budget()
+        +get_status()
+    }
+
+    class AnalyticsService {
+        +category_totals()
+        +highest_category()
+    }
+
+    class ReportService {
+        +generate_monthly_report()
+        +export_monthly_report()
+    }
+
+    TransactionService --> JsonStorage
+    BudgetService --> JsonStorage
+    AnalyticsService --> JsonStorage
+    ReportService --> JsonStorage
+    TransactionService --> Transaction

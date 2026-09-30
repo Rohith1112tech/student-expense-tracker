@@ -1,0 +1,12 @@
+flowchart TD
+    U[Student / User] --> CLI[Command Line Interface]
+    CLI --> V[Validation Module]
+    CLI --> T[Transaction Service]
+    CLI --> B[Budget Service]
+    CLI --> A[Analytics Service]
+    CLI --> R[Report Service]
+    T --> S[JSON Storage]
+    B --> S
+    A --> S
+    R --> S
+    S --> J[(expenses.json)]
